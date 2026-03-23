@@ -8,13 +8,16 @@
  * b. 左端点元素出窗口，更新状态
  * c. left++，尝试看看更短的行不行
 }
- 一句话：为了找最短，首先是合法的，越长越合法，这样左边才开始收缩，直到不合法停止  为了短就要试探合法的底线，合法循环收缩
+ 一句话：为了找最短，首先足够长是合法的，越长越合法，这样左边才开始收缩，直到不合法停止  为了短就要试探合法的底线，合法循环收缩
  */
 
 #include <vector>
 #include <algorithm>
 #include <climits>
 #include <cstring>
+#include <string>    
+#include <algorithm> 
+using namespace std;
 
 namespace AlgoTemplate {
 
