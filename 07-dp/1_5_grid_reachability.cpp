@@ -72,8 +72,8 @@ public:
         // 3D 记忆化数组：memo[行][列][当前要求的异或值]
         vector<vector<vector<int>>> memo(m, vector<vector<int>>(n, vector<int>(u, -1)));
 
-        // 使用递归 lambda
-        function<int(int, int, int)> dfs = [&](int i, int j, int x) -> int {
+        // 使用 C++23 的 explicit object parameter (this auto&& dfs)
+        auto dfs = [&](this auto&& dfs, int i, int j, int x) -> int {
             // 2. 【边界处理】：如果坐标越界，说明这条路径走不通，返回 0
             if (i < 0 || j < 0) {
                 return 0;
